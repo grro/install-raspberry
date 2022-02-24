@@ -1,10 +1,7 @@
 #!/bin/bash
 
 
-
 JAVA_VER=$(java -version 2>&1 >/dev/null | grep 'Zulu11')
-
-echo "installing zulu java $JAVA_VER"
 
 if [ -n "$JAVA_VER" ]
 then
