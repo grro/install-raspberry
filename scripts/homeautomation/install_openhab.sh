@@ -2,6 +2,7 @@
 
 
 
+
 if [ -d "/etc/openhab" ]
 then
     echo ""
@@ -72,5 +73,4 @@ else
     echo 'this is a marker file"' >> addons_installed.txt
     sudo mv addons_installed.txt /etc/default/addons_installed.txt
 fi
-
 
