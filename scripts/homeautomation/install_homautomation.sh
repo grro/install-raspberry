@@ -16,6 +16,6 @@ sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/sc
 
 sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/install_mutt.sh | bash
 
-sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/install_openhab3.sh | bash
+sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/install_openhab.sh | bash
 
 sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/install_samba_for_openhab.sh | bash
