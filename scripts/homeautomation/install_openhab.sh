@@ -68,7 +68,8 @@ else
     sudo systemctl start openhab.service
     sudo systemctl daemon-reload
     sudo systemctl enable openhab.service
-    echo 'Installed"' > /etc/openhab/addons_installed.txt
+    echo 'this is a marker file"' >> addons_installed.txt
+    sudo mv addons_installed.txt /etc/default/addons_installed.txt
 fi
 
 
