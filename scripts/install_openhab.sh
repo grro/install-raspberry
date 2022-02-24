@@ -16,18 +16,6 @@ else
     sudo usermod -a -G dialout openhab
     setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' $(realpath /usr/bin/java)
     sudo apt-get -y install iputils-arping
-
-    if /usr/bin/lsusb | grep -q "0403:600"; then
-       echo "ttyUSB-enocean detected"
-    else
-       echo "ttyUSB-enocean seems not to be detected !!!"
-    fi
-
-    if /usr/bin/lsusb | grep -q "0658:0200"; then
-       echo "ttyUSB-zwave detected"
-    else
-       echo "ttyUSB-zwave seems not to be detected !!!"
-    fi
 fi
 
 
@@ -41,17 +29,6 @@ else
     sudo mv /etc/default/openhab /etc/default/openhab.org
     cp $tmp_dir/openhab.tmp /etc/default/openhab
 fi
-
-
-if [ -f "/etc/openhab/services/runtime.cfg.save" ]
-then
-    echo "/etc/openhab/services/runtime.cfg is already extended"
-else
-    echo "extending /etc/openhab/services/runtime.cfg"
-    cp /etc/openhab/services/runtime.cfg /etc/openhab/services/runtime.cfg.save
-    echo 'org.openhab.restauth:allowBasicAuth=true' >> /etc/openhab/services/runtime.cfg
-fi
-
 
 sudo apt-get install openhab-addons -y
 sudo systemctl start openhab.service
