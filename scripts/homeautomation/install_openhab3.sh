@@ -57,7 +57,7 @@ fi
 
 
 
-if [ -f "/etc/openhab/addons_installed.txt" ]
+if [ -f "/etc/default/addons_installed.txt" ]
 then
     echo ""
     echo "++++++++++"
