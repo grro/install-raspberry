@@ -13,10 +13,6 @@ else
     echo "+++++"
     java_package="zulu11.52.13-ca-jdk11.0.13-linux_aarch32hf"
     echo "installing zulu java $JAVA_VER"
-
-    tmp_dir=$(mktemp -d -t installation-XXXXXXXXXX)
-    cd $tmp_dir
-
     sudo mkdir /opt/jdk
     cd /opt/jdk
     sudo dpkg --print-architecture
@@ -26,6 +22,4 @@ else
     sudo update-alternatives --install /usr/bin/java java /opt/jdk/$java_package/bin/java 1
     sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/$java_package/bin/javac 1
     sudo java -version
-
-    sudo rm $tmp_dir
 fi
