@@ -55,6 +55,7 @@ else
 fi
 
 
+
 if [ -f "/etc/openhab/addons_installed.txt" ]
 then
     echo ""
