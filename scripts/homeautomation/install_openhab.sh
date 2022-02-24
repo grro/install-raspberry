@@ -30,9 +30,12 @@ fi
 
 if [ -f "/etc/udev/rules.d/50-usb-serial.rules" ]
 then
-    echo "/etc/udev/rules.d/50-usb-serial.rules is already created"
+    echo "++++++++++"
+    echo "+ /etc/udev/rules.d/50-usb-serial.rules is already created"
 else
-    echo "create /etc/udev/rules.d/50-usb-serial.rules"
+    echo "++++++++++"
+    echo "+ create /etc/udev/rules.d/50-usb-serial.rules"
+
     echo 'SUBSYSTEM=="tty", ATTRS{idVendor}=="0658", ATTRS{idProduct}=="0200", SYMLINK+="ttyUSB-zwave", GROUP="dialout", MODE="0666"' >> 50-usb-serial.tmp
     echo 'SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SYMLINK+="ttyUSB-enocean", GROUP="dialout", MODE="0666"' >> 50-usb-serial.tmp
     sudo mv 50-usb-serial.tmp /etc/udev/rules.d/50-usb-serial.rules
