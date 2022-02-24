@@ -27,7 +27,7 @@ else
     tmp_dir=$(mktemp -d -t installation-XXXXXXXXXX)
     echo "extending /etc/default/openhab"
     sudo cp /etc/default/openhab $tmp_dir/openhab.tmp
-    echo 'EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB-zwave:/dev/ttyUSB-enocean"' >> $tmp_dir/openhab.tmp
+    sudo sh -c 'EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB-zwave:/dev/ttyUSB-enocean">> $tmp_dir/openhab.tmp'
     sudo mv /etc/default/openhab /etc/default/openhab.org
     sudo cp $tmp_dir/openhab.tmp /etc/default/openhab
     sudo rm $tmp_dir
