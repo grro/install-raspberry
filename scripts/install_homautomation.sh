@@ -1,7 +1,13 @@
 #!/bin/bash
 
+##################################################
+#
 # run this script by executing
 # sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/install_homautomation.sh | bash
+#
+###################################################
+
+
 
 #sudo apt-get update
 
