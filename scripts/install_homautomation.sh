@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 ##################################################
 #
 # run this script by executing
