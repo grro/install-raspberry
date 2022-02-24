@@ -1,10 +1,6 @@
 #!/bin/bash
 
 
-tmp_dir=$(mktemp -d -t installation-XXXXXXXXXX)
-cd $tmp_dir
-
-echo "temp dir $tmp_dir created"
 
 JAVA_VER=$(java -version 2>&1 >/dev/null | grep 'Zulu11')
 echo $JAVA_VER
@@ -12,6 +8,10 @@ if [ -n "$JAVA_VER" ]
 then
     echo "java is already installed"
 else
+    tmp_dir=$(mktemp -d -t installation-XXXXXXXXXX)
+    cd $tmp_dir
+    echo "temp dir $tmp_dir created"
+
     java_package="zulu11.52.13-ca-jdk11.0.13-linux_aarch32hf"
     echo "installing zulu java"
     sudo mkdir /opt/jdk
@@ -23,4 +23,6 @@ else
     sudo update-alternatives --install /usr/bin/java java /opt/jdk/$java_package/bin/java 1
     sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/$java_package/bin/javac 1
     sudo java -version
+
+    sudo rm $tmp_dir
 fi
