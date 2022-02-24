@@ -4,8 +4,12 @@
 
 if [ -d "/etc/openhab" ]
 then
+    echo ""
+    echo "+++++"
     echo "openhab is already installed"
 else
+    echo ""
+    echo "+++++"
     echo "installing iputils"
     sudo apt-get -y install iputils-arping
 
@@ -22,8 +26,12 @@ fi
 
 if [ -f "/etc/default/openhab.org" ]
 then
+    echo ""
+    echo "+++++"
     echo "/etc/default/openhab is already extended"
 else
+    echo ""
+    echo "+++++"
     echo "extending /etc/default/openhab"
     sudo cp /etc/default/openhab /etc/default/openhab.tmp
     echo 'EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB-zwave:/dev/ttyUSB-enocean"' >> /etc/default/openhab.tmp
