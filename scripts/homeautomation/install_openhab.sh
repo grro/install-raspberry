@@ -26,6 +26,17 @@ else
 fi
 
 
+
+if [ -f "/etc/udev/rules.d/50-usb-serial.rules" ]
+then
+    echo "/etc/udev/rules.d/50-usb-serial.rules is already created"
+else
+    echo "creating /etc/udev/rules.d/50-usb-serial.rules"
+    echo 'SUBSYSTEM=="tty", ATTRS{idVendor}=="0658", ATTRS{idProduct}=="0200", SYMLINK+="ttyUSB-zwave", GROUP="dialout", MODE="0666"' >> /etc/udev/rules.d/50-usb-serial.rules
+    echo 'SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SYMLINK+="ttyUSB-enocean", GROUP="dialout", MODE="0666"' >> /etc/udev/rules.d/50-usb-serial.rules
+fi
+
+
 if [ -f "/etc/default/openhab.org" ]
 then
     echo ""
@@ -43,7 +54,7 @@ else
 fi
 
 
-if [ -f "/etc/default/addons_installed.txt" ]
+if [ -f "/etc/openhab/addons_installed.txt" ]
 then
     echo ""
     echo "++++++++++"
@@ -56,7 +67,7 @@ else
     sudo systemctl start openhab.service
     sudo systemctl daemon-reload
     sudo systemctl enable openhab.service
-    echo 'Installed"' > /etc/default/addons_installed.txt
+    echo 'Installed"' > /etc/openhab/addons_installed.txt
 fi
 
 
