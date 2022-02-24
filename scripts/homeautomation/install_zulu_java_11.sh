@@ -12,7 +12,7 @@ else
     echo ""
     echo "++++++++++"
     java_package="zulu11.52.13-ca-jdk11.0.13-linux_aarch32hf"
-    echo "+ installing zulu java $JAVA_VER"
+    echo "+ installing zulu java"
     sudo mkdir /opt/jdk
     cd /opt/jdk
     sudo dpkg --print-architecture
