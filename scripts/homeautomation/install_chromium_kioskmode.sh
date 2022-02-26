@@ -3,7 +3,7 @@
 
 
 
-if command -v chromium-browser &> /dev/null
+if [ -f "/etc/xdg/openbox/autostart.org" ]
 then
     echo ""
     echo "++++++++++"
