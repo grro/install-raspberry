@@ -10,10 +10,7 @@
 
 sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/install_update.sh | bash
 
-
-# will be removed
-sudo apt-get install xrdp -y
-
+#sudo apt-get install xrdp -y
 
 #sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/install_python.sh | bash
 
