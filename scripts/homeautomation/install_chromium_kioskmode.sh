@@ -21,7 +21,8 @@ else
     sudo cp /etc/xdg/openbox/autostart autostart.org
     cat autostart.org >> autostart.extended
     cat autostart_extension.tmp >> autostart.extended
-    sudo mv autostart.extended /etc/xdg/openbox/autostart.org
+    sudo mv autostart.extended /etc/xdg/openbox/autostart
+    sudo mv autostart.org /etc/xdg/openbox/autostart.org
 
     # add to chron
     # chromium-browser  --noerrdialogs --check-for-update-interval=31536000 --disable-infobars --kiosk http://localhost:8080/habpanel/index.html# &
