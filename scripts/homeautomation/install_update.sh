@@ -2,7 +2,7 @@
 
 
 
-if [ -f "deleteme.tmp" ]
+if [ -f "/tmp/__installation_homeautomation_repo_updated_marker.tmp" ]
 then
     echo ""
     echo "++++++++++"
@@ -12,5 +12,5 @@ else
     echo "++++++++++"
     echo "+ perform repo update "
     sudo apt-get update -y
-    echo 'marker file' >> deleteme.tmp
+    echo 'marker file' >> /tmp/__installation_homeautomation_repo_updated_marker.tmp
 fi
