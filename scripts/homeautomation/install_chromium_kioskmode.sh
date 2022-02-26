@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if [ -f "/etc/xdg/openbox/autostart.org" ]
 then
     echo ""
