@@ -12,8 +12,22 @@ else
     echo ""
     echo "++++++++++"
     echo "+ install chromium browser "
-    sudo apt-get install --no-install-recommends xserver-xorg x11-xserver-utils xinit openbox xdotool
-    sudo apt-get install --no-install-recommends chromium-browser
+    sudo apt-get install --no-install-recommends xserver-xorg x11-xserver-utils xinit openbox xdotool -y
+    sudo apt-get install --no-install-recommends chromium-browser -y
+    sudo apt-get install unclutter -y
+
+    sudo cp /etc/xdg/openbox/autostart autostart.tmp
+    echo '# xset -dpms            # turn off display power management system' >> autostart.tmp
+    echo 'xset s noblank        # turn off screen blanking' >> autostart.tmp
+    echo 'xset s off            # turn off screen saver' >> autostart.tmp
+    echo '@unclutter' >> autostart.tmp
+    echo '# Remove exit errors from the config files that could trigger a warning' >> autostart.tmp
+    echo "sed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/' ~/.config/chromium/\'Local State'" >> autostart.tmp
+    echo "sed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/; s/\"exit_type\":\"[^\"]\+\"/\"exit_type\":\"Normal\"/' ~/.config/chromium/Default/Preferences" >> autostart.tmp
+    echo '# Run Chromium in kiosk mode' >> autostart.tmp
+    echo 'chromium-browser  --noerrdialogs --check-for-update-interval=31536000 --disable-infobars --kiosk http://192.168.1.27:8080 &' >> autostart.tmp
+    sudo cp /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.org
+    sudo cp autostart.tmp /etc/xdg/openbox/autostart
 fi
 
 
