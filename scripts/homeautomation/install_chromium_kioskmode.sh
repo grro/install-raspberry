@@ -16,12 +16,12 @@ else
     echo 'xset s off            # turn off screen saver' >> autostart_extension.tmp
     echo '@unclutter' >> autostart_extension.tmp
     echo '# Remove exit errors from the config files that could trigger a warning' >> autostart_extension.tmp
-    echo "sed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/' ~/.config/chromium/\'Local State'" >> autostart_extension.tmp2
-    echo "sed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/; s/\"exit_type\":\"[^\"]\+\"/\"exit_type\":\"Normal\"/' ~/.config/chromium/Default/Preferences" >> autostart_extension.tmp2
+    echo "sed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/' ~/.config/chromium/\'Local State'" >> autostart_extension.tmp
+    echo "sed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/; s/\"exit_type\":\"[^\"]\+\"/\"exit_type\":\"Normal\"/' ~/.config/chromium/Default/Preferences" >> autostart_extension.tmp
     sudo cp /etc/xdg/openbox/autostart autostart.org
     cat autostart.org >> autostart.extended
     cat autostart_extension.tmp >> autostart.extended
-    #sudo mv autostart.extended /etc/xdg/openbox/autostart.org
+    sudo mv autostart.extended /etc/xdg/openbox/autostart.org
 
     # add to chron
     # chromium-browser  --noerrdialogs --check-for-update-interval=31536000 --disable-infobars --kiosk http://localhost:8080/habpanel/index.html# &
