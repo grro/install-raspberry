@@ -22,7 +22,7 @@ else
     echo "sed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/' ~/.config/chromium/\'Local State'" >> autostart_extension.tmp2
     echo "sed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/; s/\"exit_type\":\"[^\"]\+\"/\"exit_type\":\"Normal\"/' ~/.config/chromium/Default/Preferences" >> autostart_extension.tmp2
     sudo cp /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.org
-    sudo cat autostart_extension.tmp /etc/xdg/openbox/autostart
+    sudo cat autostart_extension.tmp >> /etc/xdg/openbox/autostart
 
     # add to chron
     # chromium-browser  --noerrdialogs --check-for-update-interval=31536000 --disable-infobars --kiosk http://localhost:8080/habpanel/index.html# &
