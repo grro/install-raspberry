@@ -8,9 +8,9 @@
 ###################################################
 
 
-#sudo apt-get update
-
 sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/install_update.sh | bash
+
+# sudo sudo apt-get install xrdp
 
 sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/install_python.sh | bash
 
