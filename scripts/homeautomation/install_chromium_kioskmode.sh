@@ -29,7 +29,8 @@ else
 
     # add to chron
     # chromium-browser  --noerrdialogs --check-for-update-interval=31536000 --disable-infobars --kiosk http://localhost:8080/habpanel/index.html# &
-
 fi
+
+
 
 
