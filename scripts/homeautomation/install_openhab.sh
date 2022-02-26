@@ -59,13 +59,8 @@ else
 fi
 
 
-
-if [ -f "/etc/default/addons_installed.txt" ]
+if [ -z "$(find /usr/share/openhab/addons/* -name '*kar' -print -quit)" ]
 then
-    echo ""
-    echo "++++++++++"
-    echo "+ openhab-addons already installed"
-else
     echo ""
     echo "++++++++++"
     echo "+ install openhab-addons"
@@ -73,7 +68,30 @@ else
     sudo systemctl start openhab.service
     sudo systemctl daemon-reload
     sudo systemctl enable openhab.service
-    echo 'this is a marker file"' >> addons_installed.txt
-    sudo mv addons_installed.txt /etc/default/addons_installed.txt
+else
+    echo ""
+    echo "++++++++++"
+    echo "+ openhab-addons already installed"
 fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
