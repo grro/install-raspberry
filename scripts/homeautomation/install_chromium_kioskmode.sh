@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f "/etc/xdg/openbox/autostart.org" ]
+if [ -f "/etc/xdg/lxsession/LXDE-pi/autostart.org" ]
 then
     echo ""
     echo "++++++++++"
