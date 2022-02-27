@@ -12,24 +12,25 @@ else
     sudo apt-get install chromium-browser -y
     sudo apt-get install unclutter -y
 
-    #echo '  ' >> autostart_extension.tmp
-    #echo '  ' >> autostart_extension.tmp
-    #echo 'xset s noblank        # turn off screen blanking' >> autostart_extension.tmp
-    #echo 'xset s off            # turn off screen saver' >> autostart_extension.tmp
-    #echo '  ' >> autostart_extension.tmp
-    #echo '@unclutter' >> autostart_extension.tmp
-    #echo '  ' >> autostart_extension.tmp
-    #echo '# Remove exit errors from the config files that could trigger a warning' >> autostart_extension.tmp
-    #echo "sed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/' ~/.config/chromium/\'Local State'" >> autostart_extension.tmp
-    #echo "sed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/; s/\"exit_type\":\"[^\"]\+\"/\"exit_type\":\"Normal\"/' ~/.config/chromium/Default/Preferences" >> autostart_extension.tmp
-    #sudo cp /etc/xdg/openbox/autostart autostart.org
-    #cat autostart.org >> autostart.extended
-    #cat autostart_extension.tmp >> autostart.extended
-    #sudo mv autostart.extended /etc/xdg/openbox/autostart
-    #sudo mv autostart.org /etc/xdg/openbox/autostart.org
+    echo "#!/bin/bash" >> start_browser.sh.tmp
+    echo "sleep 90" >> start_browser.sh.tmp
+    echo "chromium-browser --kiosk --noerrdialogs  --check-for-update-interval=31536000 --disable-infobars http://0.0.0.0:8080/habpanel/index.html#/view/home" >> start_browser.sh.tmp
+    sudo mkdir /etc/kioskbrowser
+    sudo mv start_browser.sh.tmp /etc/kioskbrowser/start_browser.sh
+    sudo chmod +x /etc/kioskbrowser/start_browser.sh
 
-    # add to chron
-    # chromium-browser  --noerrdialogs --check-for-update-interval=31536000 --disable-infobars --kiosk http://localhost:8080/habpanel/index.html# &
+
+    echo '  ' >> autostart_extension.tmp
+    echo '# disable curser' >> autostart_extension.tmp
+    echo '@unclutter' >> autostart_extension.tmp
+    echo '  ' >> autostart_extension.tmp
+    echo '# start Chromium in full mode' >> autostart_extension.tmp
+    echo '@/etc/kioskbrowser/start_browser.sh' >> autostart_extension.tmp
+    sudo cp /etc/xdg/lxsession/LXDE-pi/autostart autostart.org
+    cat autostart.org >> autostart.extended
+    cat autostart_extension.tmp >> autostart.extended
+    sudo mv autostart.extended /etc/xdg/lxsession/LXDE-pi/autostart
+    sudo mv autostart.org /etc/xdg/lxsession/LXDE-pi/autostart.org
 fi
 
 
