@@ -10,8 +10,12 @@ else
     echo "++++++++++"
     echo "+ install chromium browser "
     sudo apt-get install chromium-browser -y
+
+    echo "+ install unclutter "
     sudo apt-get install unclutter -y
 
+
+    echo "+ update autostart "
     echo "#!/bin/bash" >> start_browser.sh.tmp
     echo "sleep 90" >> start_browser.sh.tmp
     echo "chromium-browser --kiosk --noerrdialogs  --check-for-update-interval=31536000 --disable-infobars http://0.0.0.0:8080/habpanel/index.html#/view/home" >> start_browser.sh.tmp
