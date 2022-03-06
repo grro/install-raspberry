@@ -12,4 +12,3 @@ else
     echo "+ installing mutt"
     sudo apt-get install mutt -y
 fi
-
