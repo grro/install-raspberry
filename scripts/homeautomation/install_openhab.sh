@@ -23,7 +23,7 @@ else
     sudo adduser openhab dialout
     sudo adduser openhab tty
     sudo usermod -a -G dialout openhab
-    setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' $(realpath /usr/bin/java)
+    sudo setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' $(realpath /usr/bin/java)
 fi
 
 
