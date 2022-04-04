@@ -21,6 +21,16 @@ sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/sc
 
 sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/install_samba.sh | bash
 
-echo 'run sudo smbpasswd -a <user>'
+sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/install_samba.sh | bash
+
+sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/install_nas.sh | bash
+
+sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/install_rsnapshot.sh | bash
+
+
+echo 'please execute the commands below'
+echo 'sudo update-alternatives --config java'
+echo 'sudo smbpasswd -a <user>'
+
 
 #sudo apt autoremove

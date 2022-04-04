@@ -22,5 +22,4 @@ else
     sudo update-alternatives --install /usr/bin/java java /opt/jdk/$java_package/bin/java 1
     sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/$java_package/bin/javac 1
     sudo java -version
-    sudo update-alternatives --config java
 fi
