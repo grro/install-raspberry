@@ -26,6 +26,6 @@ else
     sudo curl -o smb.tmp https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/smb.conf
     sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.org
     sudo mv smb.tmp /etc/samba/smb.conf
-    sudo chown -hR openhab:openhab /etc/openhab /opt/openhab/conf
+    sudo chown -hR openhab:openhab /etc/openhab
     sudo systemctl restart smbd
 fi
