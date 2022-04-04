@@ -11,7 +11,6 @@ else
     echo "++++++++++"
     echo "+ installing samba"
     sudo apt-get install samba samba-common smbclient -y
-    sudo smbpasswd -a openhab
 fi
 
 
