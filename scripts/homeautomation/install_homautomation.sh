@@ -19,10 +19,10 @@ sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/sc
 
 sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/install_mutt.sh | bash
 
-sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/install_openhab.sh | bash
-
 sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/install_samba_for_openhab.sh | bash
 
-#sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/install_chromium_kioskmode.sh | bash
+sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/install_openhab.sh | bash
+
+# sudo curl -s -L https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/modules/install_frontail.sh | bash
 
 #sudo apt autoremove
