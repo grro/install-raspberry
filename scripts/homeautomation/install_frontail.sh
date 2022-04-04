@@ -13,5 +13,4 @@ else
     sudo wget -O - https://raw.githubusercontent.com/sdesalas/node-pi-zero/master/install-node-v9.11.2.sh | bash
     sudo apt-get install npm -y
     npm install frontail -g
-
 fi
