@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if [ -f "/tmp/__installation_homeautomation_repo_updated_marker.tmp" ]
+if [ -f "/tmp/__installation_unifi_marker.tmp" ]
 then
     echo ""
     echo "++++++++++"
