@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if [ -f "/tmp/__installation_unifimarker.tmp" ]
+if [ -d "/usr/lib/unifi" ]
 then
     echo ""
     echo "++++++++++"
