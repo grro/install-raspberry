@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if [ -f "/tmp/__installation_unifi_marker.tmp" ]
+if [ -f "/tmp/__installation_unifimarker.tmp" ]
 then
     echo ""
     echo "++++++++++"
