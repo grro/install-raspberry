@@ -21,15 +21,29 @@ else
     sudo apt-get update
     sudo apt-get install openhab -y
     sudo setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' $(realpath /usr/bin/java)
+fi
 
-    echo " " >> openhab_extension.tmp
-    echo "OPENHAB_HTTP_PORT=9080" >> openhab_extension.tmp
-    echo "OPENHAB_HTTPS_PORT=9443" >> openhab_extension.tmp
-    sudo ccp /etc/default/openhab openhab.org
-    cat openhab.org >> openhab.extended
-    cat openhab_extension.tmp >> openhab.extended
-    sudo mv openhab.extended /etc/default/openhab
-    sudo mv openhab.org /etc/default/openhab.org
+
+
+if  [ -f "/etc/default/openhab" ]; then
+    if  grep -q "9080" "/etc/default/openhab"  ; then
+        echo "++++++++++"
+        echo "+ /etc/default/openhab is already extended"
+    else
+        echo "++++++++++"
+        echo "+ extending /etc/default/openhab"
+        echo " " >> openhab_extension.tmp
+        echo "OPENHAB_HTTP_PORT=9080" >> openhab_extension.tmp
+        echo "OPENHAB_HTTPS_PORT=9443" >> openhab_extension.tmp
+        sudo cp /etc/default/openhab openhab.org
+        cat openhab.org >> openhab.extended
+        cat openhab_extension.tmp >> openhab.extended
+        sudo mv openhab.extended /etc/default/openhab
+        sudo mv openhab.org /etc/default/openhab.org
+    fi
+else
+    echo "++++++++++"
+    echo "+ openhab is not installed"
 fi
 
 
