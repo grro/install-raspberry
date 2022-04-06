@@ -29,7 +29,6 @@ else
     sudo mv smb.tmp /etc/samba/smb.conf
 
     sudo chown -R pi:pi /etc/scripts
-    sudo chmod -R 700 /etc/scripts
-    sudo systemctl restart smbd
-    sudo smbpasswd -a pi
+    echo "sudo smbpasswd -a pi"
+    echo "sudo systemctl restart smbd"
 fi
