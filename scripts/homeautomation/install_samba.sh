@@ -10,6 +10,7 @@ else
     echo ""
     echo "++++++++++"
     echo "+ installing samba"
+    sudo apt update && sudo apt upgrade -y
     sudo apt-get install samba samba-common smbclient -y
 fi
 
@@ -30,6 +31,5 @@ else
     sudo chown -R pi:pi /etc/scripts
     sudo chmod -R 700 /etc/scripts
     sudo systemctl restart smbd
-
     sudo smbpasswd -a pi
 fi
