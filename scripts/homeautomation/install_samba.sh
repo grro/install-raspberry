@@ -24,6 +24,7 @@ else
     echo ""
     echo "++++++++++"
     echo "+ updating samba config"
+    sudo apt update && sudo apt upgrade -y
 
     sudo curl -o smb.tmp https://raw.githubusercontent.com/grro/install-raspberry/main/scripts/homeautomation/smb.conf
     sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.org
